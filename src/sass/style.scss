@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+$main_bg_color: #af0e0e;
+$highlight: #ea1313 ;
+$inactive: #f58888;
+
+
+header {
+    h1 {
+        font-family: 'Indie Flower', cursive;
+        font-size: 3em;
+    }
+}
+
+.w3-button {
+     &:hover {
+        background-color: $highlight !important;
+        color: $main_bg_color !important;
+        padding: 8px 10px;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+button > img{
+    pointer-events: none;
+}
+
+
+textarea {
+    resize:none;
+    width: 100%;
+    min-height: 7em;
+    height: 100%;
+    box-sizing: border-box;
+    /*background-color: antiquewhite*/
+    border: none;
+    
+}
+
+section>button{
+    background-color: $main_bg_color !important;
+    position:  fixed;
+    bottom: 10px;
+    right: 10px;
+    box-shadow: 5px 5px 2px rgba(0, 0, 0,.3);
+    &:active {
+        background-color: white !important;
+        color: $highlight !important;
+    }
+}
+
+.w3-input {
+    margin: 5px 0px;
+    height: 25px;
+    &:disabled {
+        background-color: $highlight;
+        color: white;
+        border: 0px;
+    }
+}
+
+i {
+    pointer-events: none;
+}
+
+[v-cloak] {
+    display: none;
+}

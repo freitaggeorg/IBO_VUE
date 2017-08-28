@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IBO HTML</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./src/sass/style.css">
+    <link rel="stylesheet" href="color_theme.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+</head>
+    <body>
+        <header class="w3-container w3-center w3-theme">
+                <h1>Notizbuch</h1>
+        </header>
+        <section id="app">
+             <div class="w3-row" v-cloak >
+                <div class="w3-half" v-for="(note, index) in notes">
+                    <div class="w3-margin w3-card-4">
+                        <div class="w3-theme-l1 w3-container w3-display-container">
+                            <div class="w3-bar-block">
+                                <div>
+                                    <div class="w3-cell">
+                                        <i class="material-icons w3-xlarge">reply</i>
+                                    </div>
+                                    <div  class="w3-cell w3-container w3-cell-middle">
+                                        <input v-bind:disabled="note.isDisabled"  type="text" v-model="note.title" placeholder="Enter Title" class="w3-input"> </input>
+                                   </div>
+                                </div>
+                                <div>
+                                    <div class="w3-cell">
+                                        <i class="material-icons w3-xlarge">query_builder</i>
+                                    </div>
+                                    <div class="w3-cell w3-container w3-cell-middle">
+                                            <input v-bind:disabled="note.isDisabled" type="text" v-model="note.date" placeholder="Enter Date" class="w3-input"> </input>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="w3-cell">
+                                        <i class="material-icons w3-xlarge">supervisor_account</i>
+                                    </div>
+                                    <div class="w3-cell w3-container w3-cell-middle">
+                                            <input v-bind:disabled="note.isDisabled" type="text" v-model="note.names" placeholder="Enter Persons" class="w3-input"> </input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w3-display-topright ">
+                                <button class="w3-button" @click="editHandler(note)">
+                                    <i class="material-icons w3-xxlarge">create</i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="w3-content w3-border w3-padding">
+                            <textarea :disabled="note.isDisabled" v-model="note.text"></textarea>
+                        </div>
+                    </div>
+                </div>
+             </div>          
+             <button class="w3-button w3-theme-l1 w3-square" @click="addNote">
+                 <i class="material-icons w3-xxlarge" >add</i>
+            </button>
+        </section>
+    </body>
+    <script src="./src/script.js"></script>
+</html>
